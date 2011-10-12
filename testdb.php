@@ -9,6 +9,6 @@ if (!$con)
 	 die('Could not connect: ' . mysql_error());
   }
 
-$val = mysql_select_db("Circa") or die(mysql_error()); 
+$val = mysql_select_db("db_29df75ea") or die(mysql_error()); 
 echo "val=$val<br>";
 ?>
