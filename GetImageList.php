@@ -11,7 +11,7 @@ $p_radius = $Radius;
 $p_log = $_POST['longitude'];
 $p_lat = $_POST['latitude'];
 
-mysql_select_db("Circa") or die(mysql_error()); 
+mysql_select_db("db_29df75ea") or die(mysql_error()); 
 
 $query = 'Select ID,image_title,description,historicalimgpath,markerimgpath,EXIFData,latitude,longitude
 		  From (select ID,image_title,description,historicalimgpath,markerimgpath,EXIFData,( 3959 * acos( cos( radians('.$p_lat.') )* cos( radians( latitude ) ) * cos( radians( longitude ) - radians('.$p_log.') )+ sin( radians('.$p_lat.') ) * sin( radians( latitude ) ) ) ) AS distance,latitude,longitude FROM imagedata HAVING ifnull(distance,0) < '.$p_radius.' AND ( latitude!=0 AND longitude != 0) ORDER BY distance ) a';
