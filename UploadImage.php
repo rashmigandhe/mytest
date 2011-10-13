@@ -1,7 +1,7 @@
 <?php
 
 require("Constant.php");
-chmod("images", 0755);
+
 $image_title = $_POST['image_title'];
 //echo "Testing image title=".$image_title;
 $latitude = $_POST['latitude'];
