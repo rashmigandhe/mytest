@@ -30,6 +30,7 @@ if($file !=""){
 		 $newrecId;
 		 $getmaxId = "select max(id)+1 as id from ImageData";
 		 $data_2 = mysql_query($getmaxId);
+		 print_r($data_2);
 		 while($info = mysql_fetch_array( $data_2 )) 
 		 {	
 			$newrecId = $info['id'];	
