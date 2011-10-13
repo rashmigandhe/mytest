@@ -27,7 +27,7 @@ if($file !=""){
 ///////////////////////
 
 // find record id of new recode
-		 $newrecId;
+		 $newrecId="";
 		 $getmaxId = "select max(id)+1 as id from imagedata";
 		 $data_2 = mysql_query($getmaxId);
 		 print_r($data_2);
