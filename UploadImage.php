@@ -28,7 +28,7 @@ if($file !=""){
 
 // find record id of new recode
 		 $newrecId;
-		 $getmaxId = "select max(id)+1 as id from ImageData";
+		 $getmaxId = "select max(id)+1 as id from imagedata";
 		 $data_2 = mysql_query($getmaxId);
 		 print_r($data_2);
 		 while($info = mysql_fetch_array( $data_2 )) 
@@ -57,7 +57,7 @@ $query ="";
 
 if($isHitorical=="false"){
 		$markerimgpath =$uploadfile;
-		$query = "INSERT INTO ImageData(image_title, latitude, longitude,description,historicalimgpath,markerimgpath,EXIFData,created_date,lastupdated_date)
+		$query = "INSERT INTO imagedata(image_title, latitude, longitude,description,historicalimgpath,markerimgpath,EXIFData,created_date,lastupdated_date)
 		VALUES ('".$image_title.'\',\''.$latitude.'\',\''.$longitude.'\',\''.$description .'\',\''.$historicalimgpath.'\',\''.$markerimgpath.'\',\''.$EXIFData.'\',\''.$created_date.'\',\''.$lastupdated_date."')";
 		
 			$data = mysql_query($query);
@@ -66,7 +66,7 @@ if($isHitorical=="false"){
 			}
 		
 		 $newrecId;
-		 $getmaxId = "select max(id) as id from ImageData";
+		 $getmaxId = "select max(id) as id from imagedata";
 		 $data_2 = mysql_query($getmaxId);
 		 while($info = mysql_fetch_array( $data_2 )) 
 		 {	
@@ -78,7 +78,7 @@ if($isHitorical=="false"){
 else
 {
 		/*$markerimgpath =$uploadfile;
-		$query = "INSERT INTO ImageData(image_title, latitude, longitude,description,historicalimgpath,markerimgpath,EXIFData,created_date,lastupdated_date)
+		$query = "INSERT INTO imagedata(image_title, latitude, longitude,description,historicalimgpath,markerimgpath,EXIFData,created_date,lastupdated_date)
 		VALUES ('".$image_title.'\',\''.$latitude.'\',\''.$longitude.'\',\''.$description .'\',\''.$historicalimgpath.'\',\''.$markerimgpath.'\',\''.$EXIFData.'\',\''.$created_date.'\',\''.$lastupdated_date."')";
 			
 			$data = mysql_query($query);
@@ -87,7 +87,7 @@ else
 			}
 		*/
 		$historicalimgpath =$uploadfile;
-		$query1 = "Update ImageData set historicalimgpath='".$historicalimgpath."' where id='".$recId."'";
+		$query1 = "Update imagedata set historicalimgpath='".$historicalimgpath."' where id='".$recId."'";
 			$data1 = mysql_query($query1);
 			if (!$data1) {
 				die('Invalid query: ' . mysql_error());
